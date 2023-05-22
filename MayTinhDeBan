@@ -1,0 +1,16 @@
+package ktra;
+
+public class MayTinhDeBan extends MayTinh {
+    private String kichThuoc;
+
+    public MayTinhDeBan(String tenMay, String kichThuoc) {
+        super(tenMay);
+        this.kichThuoc = kichThuoc;
+    }
+
+    @Override
+    public void hienThiThongTin() {
+        System.out.println("Ten may: " + tenMay);
+        System.out.println("Kich thuoc: " + kichThuoc);
+    }
+}

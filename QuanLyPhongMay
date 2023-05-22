@@ -1,0 +1,47 @@
+package ktra;
+
+public class QuanLyPhongMay {
+    private MayTinh[] danhSachMayTinh;
+    private int soLuongMayTinh;
+
+    public QuanLyPhongMay(int kichThuoc) {
+        danhSachMayTinh = new MayTinh[kichThuoc];
+        soLuongMayTinh = 0;
+    }
+
+    public void themMayTinh(MayTinh mayTinh) {
+        if (soLuongMayTinh < danhSachMayTinh.length) {
+            danhSachMayTinh[soLuongMayTinh] = mayTinh;
+            soLuongMayTinh++;
+            System.out.println("Them may tinh thanh cong.");
+        } else {
+            System.out.println("Danh sach may tinh da day.");
+        }
+    }
+
+    public void hienThiDanhSachMayTinh() {
+        if (soLuongMayTinh == 0) {
+            System.out.println("Danh sach may tinh rong.");
+        } else {
+            System.out.println("Danh sach may tinh:");
+            for (int i = 0; i < soLuongMayTinh; i++) {
+                danhSachMayTinh[i].hienThiThongTin();
+                System.out.println("------------------------");
+            }
+        }
+    }
+
+    public void timKiemMayTinh(String tenMay) {
+        boolean timThay = false;
+        for (int i = 0; i < soLuongMayTinh; i++) {
+            if (danhSachMayTinh[i].tenMay.equals(tenMay)) {
+                danhSachMayTinh[i].hienThiThongTin();
+                timThay = true;
+                break;
+            }
+        }
+        if (!timThay) {
+        System.out.println("Khong tim thay may tinh co ten: " + tenMay);
+        }
+        }
+        }

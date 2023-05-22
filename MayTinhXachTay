@@ -1,0 +1,16 @@
+package ktra;
+
+public class MayTinhXachTay extends MayTinh {
+    private int trongLuong;
+
+    public MayTinhXachTay(String tenMay, int trongLuong) {
+        super(tenMay);
+        this.trongLuong = trongLuong;
+    }
+
+    @Override
+    public void hienThiThongTin() {
+        System.out.println("Ten may: " + tenMay);
+        System.out.println("Trong luong: " + trongLuong);
+    }
+}

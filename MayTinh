@@ -1,0 +1,13 @@
+package ktra;
+
+public class MayTinh {
+    protected String tenMay;
+
+    public MayTinh(String tenMay) {
+        this.tenMay = tenMay;
+    }
+
+    public void hienThiThongTin() {
+        System.out.println("Ten may: " + tenMay);
+    }
+}

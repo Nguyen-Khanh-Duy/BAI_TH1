@@ -1,0 +1,58 @@
+package ktra;
+import java.util.Scanner;
+
+public class QuanLyPhongMayMain {
+public static void main(String[] args) {
+Scanner scanner = new Scanner(System.in);
+QuanLyPhongMay quanLyPhongMay = new QuanLyPhongMay(10);
+while p(true) {
+    System.out.println("------ MENU ------");
+    System.out.println("1. Them may tinh");
+    System.out.println("2. Hien thi danh sach may tinh");
+    System.out.println("3. Tim kiem may tinh theo ten");
+    System.out.println("4. Thoat");
+    System.out.print("Chon mot tuy chon: ");
+    int choice = scanner.nextInt();
+    scanner.nextLine(); // Đọc ký tự new line
+
+    switch (choice) {
+        case 1:
+            System.out.print("Nhap ten may tinh: ");
+            String tenMay = scanner.nextLine();
+            System.out.print("Loai may tinh (1. May tinh de ban, 2. May tinh xach tay): ");
+            int loaiMayTinh = scanner.nextInt();
+            scanner.nextLine(); // Đọc ký tự new line
+
+            if (loaiMayTinh == 1) {
+                System.out.print("Nhap kich thuoc may tinh de ban: ");
+                String kichThuoc = scanner.nextLine();
+                MayTinhDeBan mayTinhDeBan = new MayTinhDeBan(tenMay, kichThuoc);
+                quanLyPhongMay.themMayTinh(mayTinhDeBan);
+            } else if (loaiMayTinh == 2) {
+                System.out.print("Nhap trong luong may tinh xach tay: ");
+                int trongLuong = scanner.nextInt();
+                scanner.nextLine(); // Đọc ký tự new line
+                MayTinhXachTay mayTinhXachTay = new MayTinhXachTay(tenMay, trongLuong);
+                quanLyPhongMay.themMayTinh(mayTinhXachTay);
+            } else {
+                System.out.println("Lua chon khong hop le.");
+            }
+            break;
+        case 2:
+            quanLyPhongMay.hienThiDanhSachMayTinh();
+            break;
+        case 3:
+            System.out.print("Nhap ten may tinh can tim kiem: ");
+            String tenMayTinh = scanner.nextLine();
+            quanLyPhongMay.timKiemMayTinh(tenMayTinh);
+            break;
+        case 4:
+            System.out.println("Da thoat chuong trinh.");
+            scanner.close();
+            System.exit(0);
+        default:
+            System.out.println("Lua chon khong hop le.");
+    }
+}
+}
+}
